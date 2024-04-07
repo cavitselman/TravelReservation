@@ -1,0 +1,16 @@
+﻿using Microsoft.AspNetCore.Mvc;
+using TravelReservation.BL.Concrete;
+using TravelReservation.DAL.EntityFramework;
+
+namespace TravelReservation.ViewComponents.Default
+{
+    public class _Feature : ViewComponent
+    {
+        FeatureManager featureManager = new FeatureManager(new EfFeatureDal());
+        public IViewComponentResult Invoke()
+        {
+            var values = featureManager.TGetList();
+            return View(values);
+        }
+    }
+}

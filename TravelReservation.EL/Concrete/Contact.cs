@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Traversal.EL.Concrete
+namespace TravelReservation.EL.Concrete
 {
     public class Contact
     {

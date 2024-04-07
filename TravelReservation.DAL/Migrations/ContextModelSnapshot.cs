@@ -21,7 +21,7 @@ namespace TravelReservation.DAL.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("Traversal.EL.Concrete.About", b =>
+            modelBuilder.Entity("TravelReservation.EL.Concrete.About", b =>
                 {
                     b.Property<int>("AboutID")
                         .ValueGeneratedOnAdd()
@@ -57,7 +57,7 @@ namespace TravelReservation.DAL.Migrations
                     b.ToTable("Abouts");
                 });
 
-            modelBuilder.Entity("Traversal.EL.Concrete.About2", b =>
+            modelBuilder.Entity("TravelReservation.EL.Concrete.About2", b =>
                 {
                     b.Property<int>("About2ID")
                         .ValueGeneratedOnAdd()
@@ -82,7 +82,7 @@ namespace TravelReservation.DAL.Migrations
                     b.ToTable("About2s");
                 });
 
-            modelBuilder.Entity("Traversal.EL.Concrete.Contact", b =>
+            modelBuilder.Entity("TravelReservation.EL.Concrete.Contact", b =>
                 {
                     b.Property<int>("ContactID")
                         .ValueGeneratedOnAdd()
@@ -118,7 +118,7 @@ namespace TravelReservation.DAL.Migrations
                     b.ToTable("Contacts");
                 });
 
-            modelBuilder.Entity("Traversal.EL.Concrete.Destination", b =>
+            modelBuilder.Entity("TravelReservation.EL.Concrete.Destination", b =>
                 {
                     b.Property<int>("DestinationID")
                         .ValueGeneratedOnAdd()
@@ -156,7 +156,7 @@ namespace TravelReservation.DAL.Migrations
                     b.ToTable("Destinations");
                 });
 
-            modelBuilder.Entity("Traversal.EL.Concrete.Feature", b =>
+            modelBuilder.Entity("TravelReservation.EL.Concrete.Feature", b =>
                 {
                     b.Property<int>("FeatureID")
                         .ValueGeneratedOnAdd()
@@ -184,7 +184,7 @@ namespace TravelReservation.DAL.Migrations
                     b.ToTable("Features");
                 });
 
-            modelBuilder.Entity("Traversal.EL.Concrete.Feature2", b =>
+            modelBuilder.Entity("TravelReservation.EL.Concrete.Feature2", b =>
                 {
                     b.Property<int>("Feature2ID")
                         .ValueGeneratedOnAdd()
@@ -212,7 +212,7 @@ namespace TravelReservation.DAL.Migrations
                     b.ToTable("Feature2s");
                 });
 
-            modelBuilder.Entity("Traversal.EL.Concrete.Guide", b =>
+            modelBuilder.Entity("TravelReservation.EL.Concrete.Guide", b =>
                 {
                     b.Property<int>("GuideID")
                         .ValueGeneratedOnAdd()
@@ -248,7 +248,7 @@ namespace TravelReservation.DAL.Migrations
                     b.ToTable("Guides");
                 });
 
-            modelBuilder.Entity("Traversal.EL.Concrete.Newsletter", b =>
+            modelBuilder.Entity("TravelReservation.EL.Concrete.Newsletter", b =>
                 {
                     b.Property<int>("NewsletterID")
                         .ValueGeneratedOnAdd()
@@ -265,7 +265,7 @@ namespace TravelReservation.DAL.Migrations
                     b.ToTable("Newsletters");
                 });
 
-            modelBuilder.Entity("Traversal.EL.Concrete.SubAbout", b =>
+            modelBuilder.Entity("TravelReservation.EL.Concrete.SubAbout", b =>
                 {
                     b.Property<int>("SubAboutID")
                         .ValueGeneratedOnAdd()
@@ -286,7 +286,7 @@ namespace TravelReservation.DAL.Migrations
                     b.ToTable("SubAbouts");
                 });
 
-            modelBuilder.Entity("Traversal.EL.Concrete.Testimonial", b =>
+            modelBuilder.Entity("TravelReservation.EL.Concrete.Testimonial", b =>
                 {
                     b.Property<int>("TestimonialID")
                         .ValueGeneratedOnAdd()

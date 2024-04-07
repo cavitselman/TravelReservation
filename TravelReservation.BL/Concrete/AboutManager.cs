@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TravelReservation.BL.Abstract;
 using TravelReservation.DAL.Abstract;
-using Traversal.EL.Concrete;
+using TravelReservation.EL.Concrete;
 
 namespace TravelReservation.BL.Concrete
 {

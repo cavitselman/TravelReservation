@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TravelReservation.DAL.Abstract;
 using TravelReservation.DAL.Repository;
-using Traversal.EL.Concrete;
+using TravelReservation.EL.Concrete;
 
 namespace TravelReservation.DAL.EntityFramework
 {
