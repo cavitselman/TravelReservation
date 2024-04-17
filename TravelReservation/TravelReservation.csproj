@@ -30,4 +30,9 @@
     <ProjectReference Include="..\TravelReservation.EL\TravelReservation.EL.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Areas\Member\Data\" />
+    <Folder Include="Areas\Member\Models\" />
+  </ItemGroup>
+
 </Project>

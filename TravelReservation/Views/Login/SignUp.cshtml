@@ -41,22 +41,20 @@ Author URL: http://w3layouts.com
 				<div class="form-right">
 					<div class="overlay">
 						<div class="grid-info-form">
-							<h5>Say hello</h5>
-							<h3>CREATE ACCOUNT </h3>
+							<h5>Traversal Rezervasyon</h5>
+							<h3>Hesap Oluşturun </h3>
 							<p>
-								Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est natus facere aperiam!
-								Tenetur maiores dolore a quod pariatur ut voluptates quae saepe ea quasi laudantium,
-								iste molestias inventore fuga assumenda.
+								Birbirinden deneyimli rehberlerimiz eşliğinde İskandinav ülkelerinin soğuğunu, Akdeniz ülkelerinin sıcaklığını, güzel ülkemizin Kapadokya'dan Sürmene'ye, Ölüdeniz'den Asos'a, Balkan Turundan Mısır çöllerine kadar aklınıza gelen her yere bir tık uzaktayız. Seyahatlerimize katılmak için hemen kayıt olun...
 							</p>
-							<a href="index.html" class="read-more-1 btn">Get Started</a>
+							<a href="index.html" class="read-more-1 btn">Hadi başlayalım</a>
 						</div>
 
 					</div>
 				</div>
 				<div class="form-left">
 					<div class="middle">
-						<h4>Join Us</h4>
-						<p>Create Your Account, It's Free.</p>
+						<h4>Bize Katılın</h4>
+						<p>Hemen ücretsiz hesap oluşturun :)</p>
 					</div>
 					<form method="post" class="signin-form">
 						<div class="form-input">
@@ -89,18 +87,20 @@ Author URL: http://w3layouts.com
 							<input type="password" asp-for="ConfirmPassword" />
 							<span asp-validation-for="ConfirmPassword" class="text-danger"></span>
 						</div>
+						<div class="text-danger" asp-validation-summary="ModelOnly">
+
+						</div>
 
 						<label class="container">
-							I agree to <a href="#">Conditions</a> of Use and <a href="#">Privacy</a>
+							Şartları Okudum <a href="#">Kabul Ediyorum.</a><a href="#">Privacy</a>
 							<input type="checkbox">
 							<span class="checkmark"></span>
 						</label>
-						<button class="btn">Create account</button>
+						<button class="btn">Kayıt Ol</button>
 					</form>
 					<div class="copy-right text-center">
 						<p>
-							© @DateTime.Now.Year Invent Signup. All rights reserved | Design by
-							<a href="http://w3layouts.com/" target="_blank">W3layouts</a>
+							© @DateTime.Now.Year Tüm hakları saklıdır.
 						</p>
 					</div>
 				</div>
