@@ -5,10 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using TravelReservation.EL.Concrete;
 
-namespace TravelReservation.DAL.Abstract
+namespace TravelReservation.BL.Abstract
 {
-    public interface ICommentDal : IGenericDal<Comment>
+    public interface IAppUserService : IGenericService<AppUser>
     {
-        public List<Comment> GetListCommentWithDestination();
     }
 }

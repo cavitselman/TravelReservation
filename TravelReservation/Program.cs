@@ -1,6 +1,11 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.Authorization;
+using TravelReservation.BL.Abstract;
+using TravelReservation.BL.Concrete;
+using TravelReservation.BL.Container;
+using TravelReservation.DAL.Abstract;
 using TravelReservation.DAL.Concrete;
+using TravelReservation.DAL.EntityFramework;
 using TravelReservation.EL.Concrete;
 using TravelReservation.Models;
 
@@ -9,6 +14,9 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddDbContext<Context>();
 builder.Services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<Context>().AddErrorDescriber<CustomIdentityValidator>().AddEntityFrameworkStores<Context>();
+
+builder.Services.ContainerDependencies();
+
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddMvc(config =>
