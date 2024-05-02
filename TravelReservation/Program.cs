@@ -12,6 +12,13 @@ using TravelReservation.Models;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddLogging(x =>
+{
+    x.ClearProviders();
+    x.SetMinimumLevel(LogLevel.Debug);
+    x.AddDebug();
+});
+
 builder.Services.AddDbContext<Context>();
 builder.Services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<Context>().AddErrorDescriber<CustomIdentityValidator>().AddEntityFrameworkStores<Context>();
 
@@ -32,12 +39,15 @@ builder.Services.AddMvc();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
+app.Services.GetRequiredService<ILoggerFactory>().AddFile("Logs/Log1-{Date}.txt");
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
+
+app.UseStatusCodePagesWithReExecute("/ErrorPage/Error404", "?code={0}");
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
