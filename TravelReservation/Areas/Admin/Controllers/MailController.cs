@@ -26,6 +26,10 @@ namespace TravelReservation.Areas.Admin.Controllers
             MailboxAddress mailboxAdressTo = new MailboxAddress("User", mailRequest.ReceiverMail);
             mimeMessage.To.Add(mailboxAdressTo);
 
+            var bodyBuilder=new BodyBuilder();
+            bodyBuilder.TextBody = mailRequest.Body;
+            mimeMessage.Body = bodyBuilder.ToMessageBody();
+
             mimeMessage.Subject = mailRequest.Subject;
 
             SmtpClient client = new SmtpClient();

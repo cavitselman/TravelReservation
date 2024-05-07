@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34723.18
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelReservation", "TravelReservation\TravelReservation.csproj", "{BA0C0FFA-02C1-4709-ABBE-365EE0AAC601}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TravelReservation", "TravelReservation\TravelReservation.csproj", "{BA0C0FFA-02C1-4709-ABBE-365EE0AAC601}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelReservation.EL", "TravelReservation.EL\TravelReservation.EL.csproj", "{0D82B12D-C1E0-4FAD-8874-E84E7143837A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TravelReservation.EL", "TravelReservation.EL\TravelReservation.EL.csproj", "{0D82B12D-C1E0-4FAD-8874-E84E7143837A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelReservation.DAL", "TravelReservation.DAL\TravelReservation.DAL.csproj", "{D39DCBDB-9133-4307-BDF0-158297020B8C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TravelReservation.DAL", "TravelReservation.DAL\TravelReservation.DAL.csproj", "{D39DCBDB-9133-4307-BDF0-158297020B8C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelReservation.BL", "TravelReservation.BL\TravelReservation.BL.csproj", "{EF133840-97B5-4E6C-9B75-C2E8F323E5F8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TravelReservation.BL", "TravelReservation.BL\TravelReservation.BL.csproj", "{EF133840-97B5-4E6C-9B75-C2E8F323E5F8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelReservation.DTOL", "TravelReservation.DTOL\TravelReservation.DTOL.csproj", "{47854D03-6B70-46FF-AA99-FC6D696508D4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{EF133840-97B5-4E6C-9B75-C2E8F323E5F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EF133840-97B5-4E6C-9B75-C2E8F323E5F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EF133840-97B5-4E6C-9B75-C2E8F323E5F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47854D03-6B70-46FF-AA99-FC6D696508D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47854D03-6B70-46FF-AA99-FC6D696508D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47854D03-6B70-46FF-AA99-FC6D696508D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47854D03-6B70-46FF-AA99-FC6D696508D4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

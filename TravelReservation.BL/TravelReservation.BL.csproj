@@ -24,6 +24,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\TravelReservation.DAL\TravelReservation.DAL.csproj" />
+    <ProjectReference Include="..\TravelReservation.DTOL\TravelReservation.DTOL.csproj" />
     <ProjectReference Include="..\TravelReservation.EL\TravelReservation.EL.csproj" />
   </ItemGroup>
 
