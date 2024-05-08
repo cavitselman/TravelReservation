@@ -6,11 +6,11 @@ using System.Text;
 using System.Threading.Tasks;
 using TravelReservation.DTOL.DTOs.AnnouncementDTOs;
 
-namespace TravelReservation.BL.ValidationRules
+namespace TravelReservation.BL.ValidationRules.AnnouncementValidationRules
 {
-    public class AnnouncementValidator:AbstractValidator<AnnouncementAddDto>
+    public class AnnouncementUpdateValidator:AbstractValidator<AnnouncementUpdateDto>
     {
-        public AnnouncementValidator()
+        public AnnouncementUpdateValidator()
         {
             RuleFor(x => x.Title).NotEmpty().WithMessage("Lütfen başlığı boş geçmeyin");
             RuleFor(x => x.Content).NotEmpty().WithMessage("Lütfen başlığı boş geçmeyin");

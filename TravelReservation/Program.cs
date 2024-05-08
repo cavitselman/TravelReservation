@@ -1,15 +1,8 @@
-using FluentValidation;
 using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.Authorization;
-using TravelReservation.BL.Abstract;
-using TravelReservation.BL.Concrete;
 using TravelReservation.BL.Container;
-using TravelReservation.BL.ValidationRules;
-using TravelReservation.DAL.Abstract;
 using TravelReservation.DAL.Concrete;
-using TravelReservation.DAL.EntityFramework;
-using TravelReservation.DTOL.DTOs.AnnouncementDTOs;
 using TravelReservation.EL.Concrete;
 using TravelReservation.Models;
 
@@ -26,10 +19,13 @@ builder.Services.AddLogging(x =>
 builder.Services.AddDbContext<Context>();
 builder.Services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<Context>().AddErrorDescriber<CustomIdentityValidator>().AddEntityFrameworkStores<Context>();
 
+builder.Services.AddHttpClient();
+
 builder.Services.ContainerDependencies();
 
 builder.Services.AddAutoMapper(typeof(Program));
-builder.Services.AddTransient<IValidator<AnnouncementAddDTOs>, AnnouncementValidator>();
+
+builder.Services.CustomerValidator();
 
 builder.Services.AddControllersWithViews().AddFluentValidation();
 

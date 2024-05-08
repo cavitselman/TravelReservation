@@ -8,7 +8,7 @@ using TravelReservation.DTOL.DTOs.AppUserDTOs;
 
 namespace TravelReservation.BL.ValidationRules
 {
-    public class AppUserRegisterValidator:AbstractValidator<AppUserRegisterDTOs>
+    public class AppUserRegisterValidator:AbstractValidator<AppUserRegisterDto>
     {
         public AppUserRegisterValidator()
         {

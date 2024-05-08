@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TravelReservation.DTOL.DTOs.MailDTOs
 {
-    public class MailRequestDTOs
+    public class MailRequestDto
     {
         public string Name { get; set; }
         public string SenderMail { get; set; }

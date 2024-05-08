@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace TravelReservation.DTOL.DTOs.AppUserDTOs
 {
-    public class AppUserRegisterDTOs
+    public class AppUserRegisterDto
     {
         public string Name { get; set; }
         public string Surname { get; set; }

@@ -9,11 +9,15 @@ namespace TravelReservation.Mapping.AutoMapperProfile
     {
         public MapProfile()
         {
-            CreateMap<AnnouncementAddDTOs, Announcement>().ReverseMap();
+            CreateMap<AnnouncementAddDto, Announcement>().ReverseMap();
 
-            CreateMap<AppUserRegisterDTOs, AppUser>().ReverseMap();
+            CreateMap<AppUserRegisterDto, AppUser>().ReverseMap();
 
-            CreateMap<AppUserLoginDTOs, AppUser>().ReverseMap();
+            CreateMap<AppUserLoginDto, AppUser>().ReverseMap();
+
+            CreateMap<AnnouncementListDto, Announcement>().ReverseMap();
+
+            CreateMap<AnnouncementUpdateDto, Announcement>().ReverseMap();
         }
     }
 }
