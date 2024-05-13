@@ -1,14 +1,26 @@
 using FluentValidation.AspNetCore;
+using MapsterMapper;
+using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.Authorization;
 using TravelReservation.BL.Container;
+using TravelReservation.CQRS.Handlers.DestinationHandlers;
 using TravelReservation.DAL.Concrete;
 using TravelReservation.EL.Concrete;
 using TravelReservation.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+// Add services to the container.-
+
+builder.Services.AddScoped<GetDestinationByIDQueryHandler>();
+builder.Services.AddScoped<GetAllDestinationQueryHandler>();
+builder.Services.AddScoped<CreateDestinationCommandHandler>();
+builder.Services.AddScoped<RemoveDestinationCommandHandler>();
+builder.Services.AddScoped<UpdateDestinationCommandHandler>();
+
+builder.Services.AddMediatR(typeof(Program));
+
 builder.Services.AddLogging(x =>
 {
     x.ClearProviders();
@@ -23,7 +35,9 @@ builder.Services.AddHttpClient();
 
 builder.Services.ContainerDependencies();
 
-builder.Services.AddAutoMapper(typeof(Program));
+builder.Services.AddSingleton<IMapper, Mapper>();
+
+//builder.Services.AddAutoMapper(typeof(Program));
 
 builder.Services.CustomerValidator();
 

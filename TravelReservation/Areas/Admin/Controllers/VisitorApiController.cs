@@ -6,8 +6,8 @@ using TravelReservation.Areas.Admin.Models;
 
 namespace TravelReservation.Areas.Admin.Controllers
 {
-    [AllowAnonymous]
     [Area("Admin")]
+    [AllowAnonymous]    
     public class VisitorApiController : Controller
     {
         private readonly IHttpClientFactory _httpClientFactory;
@@ -50,7 +50,7 @@ namespace TravelReservation.Areas.Admin.Controllers
             }
             return View();
         }
-        
+
         public async Task<IActionResult> DeleteVisitor(int id)
         {
             var client = _httpClientFactory.CreateClient();
@@ -69,8 +69,8 @@ namespace TravelReservation.Areas.Admin.Controllers
             var responseMessage = await client.GetAsync($"http://localhost:7904/api/Visitor/{id}");
             if (responseMessage.IsSuccessStatusCode)
             {
-                var jsonData=await responseMessage.Content.ReadAsStringAsync();
-                var values=JsonConvert.DeserializeObject<VisitorViewModel>(jsonData);
+                var jsonData = await responseMessage.Content.ReadAsStringAsync();
+                var values = JsonConvert.DeserializeObject<VisitorViewModel>(jsonData);
                 return View(values);
             }
             return View();
@@ -79,8 +79,8 @@ namespace TravelReservation.Areas.Admin.Controllers
         [HttpPost]
         public async Task<IActionResult> UpdateVisitor(VisitorViewModel p)
         {
-            var client= _httpClientFactory.CreateClient();
-            var jsonData=JsonConvert.SerializeObject(p);
+            var client = _httpClientFactory.CreateClient();
+            var jsonData = JsonConvert.SerializeObject(p);
             StringContent content = new StringContent(jsonData, Encoding.UTF8, "application/json");
             var responseMessage = await client.PutAsync("http://localhost:7904/api/Visitor", content);
             if (responseMessage.IsSuccessStatusCode)
