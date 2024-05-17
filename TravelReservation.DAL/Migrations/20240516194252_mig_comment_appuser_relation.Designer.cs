@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TravelReservation.DAL.Concrete;
 
@@ -11,9 +12,11 @@ using TravelReservation.DAL.Concrete;
 namespace TravelReservation.DAL.Migrations
 {
     [DbContext(typeof(Context))]
-    partial class ContextModelSnapshot : ModelSnapshot
+    [Migration("20240516194252_mig_comment_appuser_relation")]
+    partial class mig_comment_appuser_relation
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -446,9 +449,6 @@ namespace TravelReservation.DAL.Migrations
                     b.Property<string>("CoverImage")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("Date")
-                        .HasColumnType("datetime2");
-
                     b.Property<string>("DayNight")
                         .HasColumnType("nvarchar(max)");
 
@@ -460,9 +460,6 @@ namespace TravelReservation.DAL.Migrations
 
                     b.Property<string>("Details2")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int?>("GuideID")
-                        .HasColumnType("int");
 
                     b.Property<string>("Image")
                         .HasColumnType("nvarchar(max)");
@@ -477,8 +474,6 @@ namespace TravelReservation.DAL.Migrations
                         .HasColumnType("bit");
 
                     b.HasKey("DestinationID");
-
-                    b.HasIndex("GuideID");
 
                     b.ToTable("Destinations");
                 });
@@ -542,12 +537,6 @@ namespace TravelReservation.DAL.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("GuideID"));
 
                     b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Description2")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("GuideListImage")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Image")
@@ -735,15 +724,6 @@ namespace TravelReservation.DAL.Migrations
                     b.Navigation("Destination");
                 });
 
-            modelBuilder.Entity("TravelReservation.EL.Concrete.Destination", b =>
-                {
-                    b.HasOne("TravelReservation.EL.Concrete.Guide", "Guide")
-                        .WithMany("Destinations")
-                        .HasForeignKey("GuideID");
-
-                    b.Navigation("Guide");
-                });
-
             modelBuilder.Entity("TravelReservation.EL.Concrete.Reservation", b =>
                 {
                     b.HasOne("TravelReservation.EL.Concrete.AppUser", "AppUser")
@@ -775,11 +755,6 @@ namespace TravelReservation.DAL.Migrations
                     b.Navigation("Comments");
 
                     b.Navigation("Reservations");
-                });
-
-            modelBuilder.Entity("TravelReservation.EL.Concrete.Guide", b =>
-                {
-                    b.Navigation("Destinations");
                 });
 #pragma warning restore 612, 618
         }

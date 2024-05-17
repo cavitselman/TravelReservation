@@ -10,5 +10,6 @@ namespace TravelReservation.DAL.Abstract
     public interface ICommentDal : IGenericDal<Comment>
     {
         public List<Comment> GetListCommentWithDestination();
+        public List<Comment> GetListCommentWithDestinationAndUser(int id);
     }
 }

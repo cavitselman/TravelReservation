@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TravelReservation.DAL", "Tr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TravelReservation.BL", "TravelReservation.BL\TravelReservation.BL.csproj", "{EF133840-97B5-4E6C-9B75-C2E8F323E5F8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelReservation.DTOL", "TravelReservation.DTOL\TravelReservation.DTOL.csproj", "{47854D03-6B70-46FF-AA99-FC6D696508D4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TravelReservation.DTOL", "TravelReservation.DTOL\TravelReservation.DTOL.csproj", "{47854D03-6B70-46FF-AA99-FC6D696508D4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

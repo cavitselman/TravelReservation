@@ -9,5 +9,6 @@ namespace TravelReservation.BL.Abstract
 {
     public interface IDestinationService : IGenericService<Destination>
     {
+        public Destination TGetDestinationWithGuide(int id);
     }
 }

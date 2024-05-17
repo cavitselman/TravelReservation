@@ -39,7 +39,6 @@ namespace TravelReservation.Areas.Admin.Controllers
             };
 
             _accountService.TMultiUpdate(modifiedAccounts);
-            ViewBag.v1 = "Hesaba Para Aktarılmıştır...";
             return View();
         }
     }

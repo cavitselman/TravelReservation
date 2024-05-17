@@ -10,12 +10,14 @@ using TravelReservation.BL.Abstract.AbstractUow;
 using TravelReservation.BL.Concrete;
 using TravelReservation.BL.Concrete.ConcreteUow;
 using TravelReservation.BL.ValidationRules;
+using TravelReservation.BL.ValidationRules.ContactUs;
 using TravelReservation.DAL.Abstract;
 using TravelReservation.DAL.Abstract.AbstractUow;
 using TravelReservation.DAL.EntityFramework;
 using TravelReservation.DAL.EntityFramework.EntityFrameworkUow;
 using TravelReservation.DAL.UnitOfWork;
 using TravelReservation.DTOL.DTOs.AnnouncementDTOs;
+using TravelReservation.DTOL.DTOs.ContactDTOs;
 
 namespace TravelReservation.BL.Container
 {
@@ -56,6 +58,7 @@ namespace TravelReservation.BL.Container
         public static void CustomerValidator(this IServiceCollection services)
         {
             services.AddTransient<IValidator<AnnouncementAddDto>, AnnouncementValidator>();
+            services.AddTransient<IValidator<SendMessageDto>, SendContactUsValidator>();
         }
     }
 }
