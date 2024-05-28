@@ -9,5 +9,6 @@ namespace TravelReservation.EL.Concrete
 {
     public class AppRole : IdentityRole<int>
     {
+        public string ConcurrencyStamp { get; set; } = Guid.NewGuid().ToString();
     }
 }
