@@ -8,9 +8,17 @@
 
   <ItemGroup>
     <Compile Remove="wwwroot\chameleon-admin-master\**" />
+    <Compile Remove="wwwroot\slider\**" />
+    <Compile Remove="wwwroot\zoomtemp\**" />
     <Content Remove="wwwroot\chameleon-admin-master\**" />
+    <Content Remove="wwwroot\slider\**" />
+    <Content Remove="wwwroot\zoomtemp\**" />
     <EmbeddedResource Remove="wwwroot\chameleon-admin-master\**" />
+    <EmbeddedResource Remove="wwwroot\slider\**" />
+    <EmbeddedResource Remove="wwwroot\zoomtemp\**" />
     <None Remove="wwwroot\chameleon-admin-master\**" />
+    <None Remove="wwwroot\slider\**" />
+    <None Remove="wwwroot\zoomtemp\**" />
   </ItemGroup>
 
   <ItemGroup>

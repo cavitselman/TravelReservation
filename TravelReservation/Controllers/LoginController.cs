@@ -67,7 +67,7 @@ namespace TravelReservation.Controllers
 				var result = await _signInManager.PasswordSignInAsync(p.username, p.password, false, true);
 				if(result.Succeeded)
 				{
-					return RedirectToAction("Index", "Profile", new { area = "Member" });
+					return View();
 				}
 				else
 				{
@@ -76,5 +76,11 @@ namespace TravelReservation.Controllers
 			}
 			return View();
 		}
-	}
+
+        public async Task<IActionResult> LogOut()
+        {
+            await _signInManager.SignOutAsync();
+            return RedirectToAction("Index", "Default");
+        }
+    }
 }

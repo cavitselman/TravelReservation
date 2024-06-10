@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using DocumentFormat.OpenXml.Spreadsheet;
+using Microsoft.AspNetCore.Mvc;
 using TravelReservation.BL.Abstract;
 using TravelReservation.EL.Concrete;
 
@@ -9,11 +10,13 @@ namespace TravelReservation.Areas.Admin.Controllers
     {
         private readonly IAppUserService _appUserService;
         private readonly IReservationService _reservationService;
+        private readonly ICommentService _commentService;
 
-        public UserController(IAppUserService appUserService, IReservationService reservationService)
+        public UserController(IAppUserService appUserService, IReservationService reservationService, ICommentService commentService)
         {
             _appUserService = appUserService;
             _reservationService = reservationService;
+            _commentService = commentService;
         }
 
         public IActionResult Index()
@@ -44,8 +47,8 @@ namespace TravelReservation.Areas.Admin.Controllers
 
         public IActionResult CommentUser(int id)
         {
-            _appUserService.TGetList();
-            return View();
+            var comments = _commentService.TGetListCommentWithDestination().Where(x => x.AppUserID == id).ToList(); // Kullanıcıya ait yorumları getir
+            return View(comments);
         }
 
         public IActionResult ReservationUser(int id)

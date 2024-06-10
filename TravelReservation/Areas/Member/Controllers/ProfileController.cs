@@ -19,12 +19,15 @@ namespace TravelReservation.Areas.Member.Controllers
         [HttpGet]
         public async Task<IActionResult> Index()
         {
-            var values = await _userManager.FindByNameAsync(User.Identity.Name);
+            var pp = await _userManager.FindByNameAsync(User.Identity.Name);
+            ViewBag.userName = pp.Name + " " + pp.Surname;
+            ViewBag.userImage = pp.ImageUrl; //Layoutta profil resmini getirmek için
+            var value = await _userManager.FindByNameAsync(User.Identity.Name);
             UserEditViewModel userEditViewModel = new UserEditViewModel();
-            userEditViewModel.name = values.Name;
-            userEditViewModel.surname = values.Surname;
-            userEditViewModel.phonenumber = values.PhoneNumber;
-            userEditViewModel.mail = values.Email;
+            userEditViewModel.name = value.Name;
+            userEditViewModel.surname = value.Surname;
+            userEditViewModel.phonenumber = value.PhoneNumber;
+            userEditViewModel.mail = value.Email;
             return View(userEditViewModel);
         }
 

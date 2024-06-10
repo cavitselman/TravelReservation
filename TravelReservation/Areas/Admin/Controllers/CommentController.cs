@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using TravelReservation.BL.Abstract;
 using TravelReservation.BL.Concrete;
 using TravelReservation.DAL.EntityFramework;

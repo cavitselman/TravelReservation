@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using TravelReservation.BL.Abstract;
 using TravelReservation.BL.Concrete;
 using TravelReservation.DAL.EntityFramework;
 using TravelReservation.EL.Concrete;
@@ -8,12 +9,13 @@ namespace TravelReservation.Controllers
 {
     public class CommentController : Controller
     {
-        CommentManager commentManager = new CommentManager(new EfCommentDal());
+        private readonly ICommentService _commentService;
         private readonly UserManager<AppUser> _userManager;
 
-        public CommentController(UserManager<AppUser> userManager)
+        public CommentController(UserManager<AppUser> userManager, ICommentService commentService)
         {
             _userManager = userManager;
+            _commentService = commentService;
         }
 
         [HttpGet]
@@ -26,10 +28,11 @@ namespace TravelReservation.Controllers
         }
         [HttpPost]
         public IActionResult AddComment(Comment p)
-        {
+        {            
             p.CommentDate = Convert.ToDateTime(DateTime.Now.ToShortDateString());
             p.CommentState = true;
-            commentManager.TAdd(p);            
+            p.CommentUser = User.Identity.Name;
+            _commentService.TAdd(p);            
             return RedirectToAction("Index", "Destination");
         }
     }
