@@ -79,6 +79,7 @@
             @await Component.InvokeAsync("_MemberLayoutHeaderContent")
             <div class="content-body">           
                 @RenderBody()
+                @RenderSection("Scripts", required: false)
             </div>
         </div>
     </div>

@@ -5,6 +5,24 @@
     var destinations = ((List<SelectListItem>)ViewBag.v).OrderBy(x => x.Text).ToList();
 }
 
+@section Scripts {
+    <script>
+        function calculateTotalPrice() {
+            var numberOfNights = document.getElementById("DayNight").value;
+            var personCount = document.getElementById("PersonCount").value;
+
+            // Burada fiyat hesaplama işlemini gerçekleştirin
+            var totalPrice = numberOfNights * personCount * 1600; // Örnek olarak 1600 TL fiyatı varsayalım
+
+            // Hesaplanan fiyatı HTML içine yerleştirin
+            document.getElementById("totalPrice").innerText = totalPrice + " ₺";
+
+            // Total fiyatı göster
+            document.getElementById("totalPriceDisplay").style.display = "block";
+        }
+    </script>
+}
+
 <div class="row">
     <div class="col-12">
         <div class="card">
@@ -26,7 +44,11 @@
                     <form method="post">
                         <div class="form-group">
                             @Html.Label("Lokasyon")
-                            @Html.DropDownListFor(x => x.Destination, destinations, new { @class = "form-control" })
+                            @Html.DropDownListFor(x => x.DestinationID, destinations, new { @class = "form-control" })
+                        </div>
+                        <div class="form-group">
+                            @Html.Label("Gece Sayısı")
+                            <input asp-for="DayNight" class="form-control" />
                         </div>
                         <div class="form-group">
                             @Html.Label("Kişi Sayısı")
@@ -40,7 +62,11 @@
                             @Html.Label("Varsa Eklemek İstedikleriniz")
                             <input type="text" asp-for="Description" class="form-control" />
                         </div>
-                        <button class="btn btn-outline-success" onclick="alert('Rezervasyonunuz başlangıçta onay bekliyor şeklinde alınacaktır. Rezervasyon onaylanma süreci için güncel rezervasyonlarım menüsünü takip etmeyi unutmayın.');">Rezervasyon Yap</button>
+                        <div class="alert alert-info" id="totalPriceDisplay" style="display:none;">
+                            Toplam Fiyat: <span id="totalPrice"></span>
+                        </div>
+                        <button type="button" class="btn btn-primary" onclick="calculateTotalPrice()">Fiyatı Hesapla</button>
+                        <button class="btn btn-outline-success" onclick="alert('Rezervasyonunuz başlangıçta onay bekliyor şeklinde alınacaktır. Rezervasyon onaylanma süreci için güncel rezervasyonlarım menüsünü takip etmeyi unutmayın.');">Rezervasyon Yap</button>                        
                     </form>
                 </div>
             </div>

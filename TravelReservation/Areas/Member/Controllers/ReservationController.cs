@@ -68,17 +68,26 @@ namespace TravelReservation.Areas.Member.Controllers
         }
 
         [HttpPost]
-        public IActionResult NewReservation(Reservation p)
+        public async Task<IActionResult> NewReservation(Reservation p)
         {
-            p.AppUserId = 1;
-            p.Status = "Onay Bekliyor";
-            _reservationService.TAdd(p);
-            return RedirectToAction("MyCurrentReservation");
+            var currentUser = await _userManager.GetUserAsync(User);
+            if (currentUser != null)
+            {
+                p.AppUserId = currentUser.Id;
+                p.Status = "Onay Bekliyor";
+                decimal totalPrice = CalculatePrice(p.NightPrice, p.DayNight, p.PersonCount);
+                p.TotalPrice = totalPrice;
+                _reservationService.TAdd(p);
+                return RedirectToAction("ReservationPayment", "Payment", new { area = "Member", reservationId = p.ReservationID });
+            }
+            return Redirect("/Member/Reservation/MyApprovalReservation");
         }
-
-        public IActionResult Deneme()
+        private decimal CalculatePrice(int basePricePerNight, int numberOfNights, int numberOfPeople)
         {
-            return View();
+            // Her gece için belirlenen fiyatı, gece sayısı ve kişi sayısı ile çarp
+            decimal totalPrice = basePricePerNight * numberOfNights * numberOfPeople;
+
+            return totalPrice;
         }
     }
 }

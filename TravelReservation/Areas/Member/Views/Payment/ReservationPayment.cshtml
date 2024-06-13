@@ -1,0 +1,55 @@
+﻿@model TravelReservation.EL.Concrete.Reservation
+@{
+    ViewData["Title"] = "ReservationPayment";
+    Layout = "~/Views/Shared/_MemberLayout.cshtml";
+}
+
+@if (!string.IsNullOrEmpty(ViewBag.SuccessMessage))
+{
+    <div class="alert alert-success">@ViewBag.SuccessMessage</div>
+}
+
+@if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
+{
+    <div class="alert alert-danger">@ViewBag.ErrorMessage</div>
+}
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">Ödeme Sayfası</h4>
+                <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
+                <div class="heading-elements">
+                    <ul class="list-inline mb-0">
+                        <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
+                        <li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
+                        <li><a data-action="expand"><i class="ft-maximize"></i></a></li>
+                        <li><a data-action="close"><i class="ft-x"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card-content collapse show">
+                <div class="card-body">
+                    <p class="card-text">Web sitemiz Traversal üzerinde yer alan lokasyonlar içinde yeni bir rezervasyonu aşağıdaki panelden yapabilirsiniz. </p><br />
+                    <h5>Ödeme Bilgileri</h5>
+                    <form asp-controller="Payment" asp-action="ProcessPayment" method="post">
+                        <div>
+                            <label>Kart Numarası:</label>
+                            <input type="text" name="cardNumber" pattern="\d{16}" title="Geçerli bir CVC numarası (16 rakam)" required />
+                        </div>
+                        <div>
+                            <label>Son Kullanma Tarihi (GG/AA):</label>
+                            <input type="text" name="expiryDate" pattern="\d{2}/\d{2}" title="Geçerli bir tarih formatı (GG/AA) girin" required />
+                        </div>
+                        <div>
+                            <label>CVC:</label>
+                            <input type="text" name="cvc" pattern="\d{3}" title="Geçerli bir CVC numarası (3 rakam)" required />
+                        </div>
+                        <button type="submit">Ödeme Yap</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

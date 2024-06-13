@@ -19,26 +19,6 @@ namespace TravelReservation.BL.Concrete
             _reservationDal = reservationDal;
         }
 
-        public void Delete(Reservation t)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Reservation GetByID(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<Reservation> GetList()
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<Reservation> GetListByFilter(Expression<Func<Reservation, bool>> filter)
-        {
-            throw new NotImplementedException();
-        }
-
         public List<Reservation> GetListWithReservationByAccepted(int id)
         {
             return _reservationDal.GetListWithReservationByAccepted(id);
@@ -54,11 +34,6 @@ namespace TravelReservation.BL.Concrete
             return _reservationDal.GetListWithReservationByWaitAprroval(id);
         }
 
-        public void Insert(Reservation t)
-        {
-            throw new NotImplementedException();
-        }
-
         public void TAdd(Reservation t)
         {
             _reservationDal.Insert(t);
@@ -66,27 +41,22 @@ namespace TravelReservation.BL.Concrete
 
         public void TDelete(Reservation t)
         {
-            throw new NotImplementedException();
+            _reservationDal.Delete(t);
         }
 
         public Reservation TGetByID(int id)
         {
-            throw new NotImplementedException();
+            return _reservationDal.GetByID(id);
         }
 
         public List<Reservation> TGetList()
         {
-            throw new NotImplementedException();
+            return new List<Reservation>();
         }
 
         public void TUpdate(Reservation t)
         {
-            throw new NotImplementedException();
-        }
-
-        public void Update(Reservation t)
-        {
-            throw new NotImplementedException();
+            _reservationDal.Update(t);
         }
     }
 }

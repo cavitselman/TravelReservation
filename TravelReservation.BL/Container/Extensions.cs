@@ -53,6 +53,8 @@ namespace TravelReservation.BL.Container
             services.AddScoped<IAccountDal, EfAccountDal>();
 
             services.AddScoped<IUowDal, UowDal>();
+
+            services.AddScoped<IPaypalService, PaypalManager>();
         }
 
         public static void CustomerValidator(this IServiceCollection services)
