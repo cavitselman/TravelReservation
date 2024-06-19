@@ -27,8 +27,11 @@ namespace TravelReservation.Areas.Member.Controllers
         }
 
         [HttpPost]
-        public IActionResult ProcessPayment(string cardNumber, string expiryDate, string cvc)
+        public async Task<IActionResult> ProcessPayment(string cardNumber, string expiryDate, string cvc)
         {
+            var pp = await _userManager.FindByNameAsync(User.Identity.Name);
+            ViewBag.userName = pp.Name + " " + pp.Surname;
+            ViewBag.userImage = pp.ImageUrl; //Layoutta profil resmini getirmek için
             // Ödeme işlemini simüle et
             bool paymentSuccess = SimulatePaymentProcess(cardNumber, expiryDate, cvc);
 
