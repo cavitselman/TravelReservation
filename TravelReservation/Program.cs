@@ -1,4 +1,4 @@
-using FluentValidation.AspNetCore;
+﻿using FluentValidation.AspNetCore;
 using MapsterMapper;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
