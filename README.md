@@ -1,3 +1,35 @@
+## Travel Reservation
+
+Bir tur acentesinin web isteğinin tümünü karşılayabilecek bir projedir.
+Projede kullanıcı bir tura rezervasyon yapmak istediği zaman kayıt olması gerekiyor o tur hakkında blog yazılarını inceleyip bu blog yazılarına yorumlar yapabiliyor. Admin tarafında ise
+Excel, Pdf raporlarıyla geçmiş gelecek tüm rezervasyonlara erişebiliyor. Kullanıcı şifresini unuttuğunda mail ile şifresini sıfırlayabiliyor. Daha bir çok özelliği barındırıyor Traversal...
+
+## Kullanılan Framework Sürümü
+
+- Entity Framework 8.0
+
+## Kullanılan Teknolojiler
+
+- SMTP Mail
+- SignalR
+- Automapper
+- MSSQL
+- PostgreSQL
+- Raporlama
+- Loglama
+- Ajax
+- Identity
+- JWT
+- API
+- HTML / CSS
+- JavaScript
+
+## Kullanılan Tasarım Desenleri
+
+- CQRS
+- Mediator
+- Repository
+
 ![](readme_img/1.jpg)
 ![](readme_img/2.jpg)
 ![](readme_img/3.jpg)
