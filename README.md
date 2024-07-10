@@ -12,7 +12,7 @@ Excel, Pdf raporlarıyla geçmiş gelecek tüm rezervasyonlara erişebiliyor. Ku
 
 - SMTP Mail
 - SignalR
-- Automapper
+- Mapster
 - MSSQL
 - PostgreSQL
 - Raporlama
