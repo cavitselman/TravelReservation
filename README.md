@@ -29,6 +29,8 @@ Excel, Pdf raporlarıyla geçmiş gelecek tüm rezervasyonlara erişebiliyor. Ku
 - CQRS
 - Mediator
 - Repository
+  
+## Proje Görselleri
 
 ![](readme_img/1.jpg)
 ![](readme_img/2.jpg)
