@@ -25,6 +25,7 @@ Bu proje, bir tur acentesinin web isteğinin tümünü karşılayabilecek şekil
 <ul>
     <li><strong>Raporlama</strong></li>
     <li><strong>Loglama</strong></li>
+    <li><strong>Mapster</strong></li>
 </ul>
 
 ### Web Teknolojileri
