@@ -1,36 +1,54 @@
-## Travel Reservation
+<h1 align="center">Travel Reservation</h1>
 
-Bir tur acentesinin web isteğinin tümünü karşılayabilecek bir projedir.
-Projede kullanıcı bir tura rezervasyon yapmak istediği zaman kayıt olması gerekiyor o tur hakkında blog yazılarını inceleyip bu blog yazılarına yorumlar yapabiliyor. Admin tarafında ise
-Excel, Pdf raporlarıyla geçmiş gelecek tüm rezervasyonlara erişebiliyor. Kullanıcı şifresini unuttuğunda mail ile şifresini sıfırlayabiliyor. Daha bir çok özelliği barındırıyor Traversal...
+Bu proje, bir tur acentesinin web isteğinin tümünü karşılayabilecek şekilde tasarlanmıştır. Kullanıcılar, bir tura rezervasyon yapmak istediklerinde kayıt olmalı, turlar hakkında blog yazılarını inceleyip bu yazılara yorum yapabilmektedir. Admin panelinde ise Excel ve PDF raporlarıyla geçmiş ve gelecek tüm rezervasyonlara erişim sağlanmaktadır. Kullanıcılar, şifrelerini unuttuklarında e-posta ile şifrelerini sıfırlayabilmektedir. Proje, birçok ek özellik barındırmaktadır.
 
-## Kullanılan Framework Sürümü
+<h2 align="center">Kullanılan Teknolojiler</h2>
 
-- Entity Framework 8.0
+### Framework
+<ul>
+    <li><strong>Entity Framework 8.0</strong></li>
+</ul>
 
-## Kullanılan Teknolojiler
+### İletişim ve Protokoller
+<ul>
+    <li><strong>SMTP Mail</strong></li>
+    <li><strong>SignalR</strong></li>
+</ul>
 
-- SMTP Mail
-- SignalR
-- Mapster
-- MSSQL
-- PostgreSQL
-- Raporlama
-- Loglama
-- Ajax
-- Identity
-- JWT
-- API
-- HTML / CSS
-- JavaScript
+### Veritabanları
+<ul>
+    <li><strong>MSSQL</strong></li>
+    <li><strong>PostgreSQL</strong></li>
+</ul>
 
-## Kullanılan Tasarım Desenleri
+### Veri Yönetimi
+<ul>
+    <li><strong>Raporlama</strong></li>
+    <li><strong>Loglama</strong></li>
+</ul>
 
-- CQRS
-- Mediator
-- Repository
-  
-## Proje Görselleri
+### Web Teknolojileri
+<ul>
+    <li><strong>AJAX</strong></li>
+    <li><strong>HTML / CSS</strong></li>
+    <li><strong>JavaScript</strong></li>
+</ul>
+
+### Kimlik Yönetimi ve Güvenlik
+<ul>
+    <li><strong>Identity</strong></li>
+    <li><strong>JWT (JSON Web Token)</strong></li>
+    <li><strong>Web API</strong></li>
+</ul>
+
+<h2 align="center">Mimari Desenler</h2>
+<ul>
+    <li><strong>CQRS (Command Query Responsibility Segregation)</strong></li>
+    <li><strong>Mediator</strong></li>
+    <li><strong>Repository Pattern</strong></li>
+</ul>
+
+<h2 align="center">Proje Görselleri</h2>
 
 ![](readme_img/1.jpg)
 ![](readme_img/2.jpg)
